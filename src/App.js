@@ -1,17 +1,19 @@
-import Container from "./components/Container";
-import Title from "./components/Title";
-import SearchBar from "./components/SearchBar";
+import React from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+
+import HomePage from "./pages/HomePage";
+import ResultsPage from "./pages/ResultsPage";
 
 import "./styles/globals.scss";
 
 function App() {
     return (
-        <>
-            <Container>
-                <Title text='text' />
-                <SearchBar />
-            </Container>
-        </>
+        <BrowserRouter>
+            <Routes>
+                <Route path='/' element={<HomePage />} />
+                <Route path='/:slug' element={<ResultsPage />} />
+            </Routes>
+        </BrowserRouter>
     );
 }
 

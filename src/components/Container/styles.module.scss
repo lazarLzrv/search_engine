@@ -1,5 +1,15 @@
 .container {
-    max-width: 584px;
     width: 100%;
-    margin: 50px auto;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.sm {
+    margin-top: 50px;
+    max-width: 584px;
+}
+
+.lg {
+    margin-top: 10px;
+    max-width: 1200px;
 }

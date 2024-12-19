@@ -2,8 +2,12 @@ import React from "react";
 
 import styles from "./styles.module.scss";
 
-const Index = ({ children }) => {
-    return <section className={styles.container}>{children}</section>;
+const Index = ({ size = "sm", children }) => {
+    return (
+        <section className={`${styles.container} ${styles[size]}`}>
+            {children}
+        </section>
+    );
 };
 
 export default Index;
