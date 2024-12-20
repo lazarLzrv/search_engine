@@ -17,7 +17,7 @@ const Index = () => {
 
     const onKeyDown = (e) => {
         if (sugestionsList && sugestionsList.length > 0 && isOpen) {
-            const setMaxValue = (prev) => Math.max(prev - 1, 0);
+            const setMaxValue = (prev) => Math.max(prev - 1, -1);
             const setMinValue = (prev) =>
                 Math.min(prev + 1, sugestionsList.length - 1);
 
@@ -42,7 +42,9 @@ const Index = () => {
     }, [sugestionsList, isOpen]);
 
     useEffect(() => {
-        if (selectedRow) {
+        if (selectedRow === -1) {
+            updateState({ inputValue: "" });
+        } else if (sugestionsList && sugestionsList.length > 0) {
             updateState({ inputValue: sugestionsList[selectedRow].title });
         }
     }, [selectedRow]);
