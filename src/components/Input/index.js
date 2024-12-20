@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useContext } from "react";
+import React, { useState, useEffect, useRef, useContext } from "react";
 import { SearchBarContext } from "../../contexts/SearchBarContext";
 
 import useJson from "../../api/useJson";
@@ -7,8 +7,11 @@ import styles from "./styles.module.scss";
 
 const Index = () => {
     const ref = useRef(null);
+
     const { getResultsAutoComplete } = useJson();
-    const { setData } = useContext(SearchBarContext);
+
+    const { updateState, state } = useContext(SearchBarContext);
+    const { inputValue } = state;
 
     useEffect(() => {
         if (ref.current) {
@@ -20,17 +23,22 @@ const Index = () => {
         const { value } = e.target;
         if (value) {
             getResultsAutoComplete(value).then((res) => {
-                setData(res);
+                updateState({ sugestionsList: res, isOpen: true });
             });
         }
+        updateState({ inputValue: value });
     };
 
     return (
         <input
+            value={inputValue}
             type='text'
             ref={ref}
             className={styles.input}
             onChange={(e) => onChange(e)}
+            onClick={() => {
+                updateState({ isOpen: true });
+            }}
         />
     );
 };

@@ -15,7 +15,9 @@ const useJson = () => {
         );
 
         return data.filter(({ keywords }) => {
-            return keywords.includes(queryText);
+            return keywords.some((keyword) =>
+                keyword.toLowerCase().includes(queryText.toLowerCase())
+            );
         });
     };
 

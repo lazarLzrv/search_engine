@@ -5,6 +5,7 @@
     text-decoration: none;
     color: var(--grey);
     margin-bottom: 30px;
+    cursor: pointer;
 
     &:hover {
         .main_title {
@@ -52,4 +53,14 @@
     text-overflow: ellipsis;
     display: -webkit-box;
     -webkit-box-orient: vertical;
+}
+
+.keywords {
+    margin: 5px 0;
+    display: flex;
+    li {
+        padding-right: 10px;
+        font-size: 14px;
+        color: var(--blue);
+    }
 }

@@ -8,6 +8,7 @@
 
 html,
 body {
+    font-size: 14px;
     overflow-x: hidden;
     font-family: "Open Sans";
     color: var(--black);
@@ -15,4 +16,8 @@ body {
     scroll-behavior: smooth;
     position: relative;
     min-height: 100vh;
+}
+
+strong {
+    font-weight: bold;
 }

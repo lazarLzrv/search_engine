@@ -9,53 +9,62 @@ import search from "../../assets/icons/search.svg";
 import styles from "./styles.module.scss";
 
 const Index = () => {
-    const { data } = useContext(SearchBarContext);
+    const { state, updateState } = useContext(SearchBarContext);
+    const { sugestionsList, isOpen } = state;
 
     const [idInHistory, setIdInHistory] = useState(1);
 
     return (
-        data && (
+        sugestionsList &&
+        isOpen && (
             <div className={styles.sugestions_list}>
                 <ul>
-                    {data.length > 0 ? (
-                        data.map(({ title, id }) => {
+                    {sugestionsList.length > 0 ? (
+                        sugestionsList.map(({ title, id }, i) => {
                             const inHistory = idInHistory === id;
                             return (
-                                <li
-                                    key={id}
-                                    className={
-                                        inHistory ? styles.in_history : ""
-                                    }
-                                >
-                                    <Link
-                                        to={`/search?q=${title.replace(
-                                            / /g,
-                                            "+"
-                                        )}`}
+                                i < 10 && (
+                                    <li
+                                        key={id}
+                                        className={
+                                            inHistory ? styles.in_history : ""
+                                        }
                                     >
-                                        {inHistory ? (
-                                            <img src={clock} alt='' />
-                                        ) : (
-                                            <img
-                                                className={styles.search_icon}
-                                                src={search}
-                                                alt=''
-                                            />
-                                        )}
-                                        {title}
-                                    </Link>
-                                    {inHistory ? (
-                                        <span
+                                        <Link
+                                            to={`/search?q=${title.replace(
+                                                / /g,
+                                                "+"
+                                            )}`}
                                             onClick={() => {
-                                                setIdInHistory(null);
+                                                updateState({ isOpen: false });
                                             }}
                                         >
-                                            delete
-                                        </span>
-                                    ) : (
-                                        ""
-                                    )}
-                                </li>
+                                            {inHistory ? (
+                                                <img src={clock} alt='' />
+                                            ) : (
+                                                <img
+                                                    className={
+                                                        styles.search_icon
+                                                    }
+                                                    src={search}
+                                                    alt=''
+                                                />
+                                            )}
+                                            {title}
+                                        </Link>
+                                        {inHistory ? (
+                                            <span
+                                                onClick={() => {
+                                                    setIdInHistory(null);
+                                                }}
+                                            >
+                                                delete
+                                            </span>
+                                        ) : (
+                                            ""
+                                        )}
+                                    </li>
+                                )
                             );
                         })
                     ) : (
