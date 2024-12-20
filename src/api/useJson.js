@@ -1,10 +1,27 @@
 const useJson = () => {
-    const getResultsAutoComplete = async () => {
-        return fetch("getResultsAutoComplete.json").then((res) => res.json());
+    const getResultsAutoComplete = async (queryText) => {
+        const data = await fetch("getResultsAutoComplete.json").then((res) =>
+            res.json()
+        );
+
+        return data.filter(({ title }) => {
+            return title.toLowerCase().includes(queryText.toLowerCase());
+        });
+    };
+
+    const getResultsList = async (queryText) => {
+        const data = await fetch("getResultsList.json").then((res) =>
+            res.json()
+        );
+
+        return data.filter(({ keywords }) => {
+            return keywords.includes(queryText);
+        });
     };
 
     return {
         getResultsAutoComplete,
+        getResultsList,
     };
 };
 

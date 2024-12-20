@@ -3,26 +3,20 @@ import { Link } from "react-router-dom";
 
 import styles from "./styles.module.scss";
 
-const Index = () => {
+const Index = ({ data }) => {
+    const { subTitle, parth, title, text } = data;
+
     return (
         <Link className={styles.single_result}>
             <div className={styles.info}>
                 <div className={styles.icon}></div>
                 <div>
-                    <h4> React</h4>
-                    <p>https://github.com › facebook › react</p>
+                    <h4> {subTitle}</h4>
+                    <p>{parth}</p>
                 </div>
             </div>
-            <h2 className={styles.main_title}>
-                facebook/react: The library for web and native user interfaces.
-            </h2>
-            <p className={styles.text}>
-                This page is an overview of the React documentation and related
-                resources. React is a JavaScript library for building user
-                interfaces. Learn what React is This page is an overview of the
-                React documentation and related resources. React is a JavaScript
-                library for building user interfaces. Learn what React is
-            </p>
+            <h2 className={styles.main_title}>{title}</h2>
+            <p className={styles.text}>{text}</p>
         </Link>
     );
 };

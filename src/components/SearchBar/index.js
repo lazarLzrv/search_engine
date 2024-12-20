@@ -1,4 +1,6 @@
 import React from "react";
+import { SearchBarProvider } from "../../contexts/SearchBarContext";
+
 import Input from "../Input";
 import SugestionsList from "../SugestionsList";
 
@@ -10,20 +12,27 @@ import styles from "./styles.module.scss";
 
 const Index = () => {
     return (
-        <div className={styles.wrapper}>
-            <form className={styles.search_bar}>
-                <div className={styles.inner}>
-                    <img className={styles.search_icon} src={search} alt='' />
-                    <Input />
+        <SearchBarProvider>
+            <div className={styles.wrapper}>
+                <form className={styles.search_bar}>
+                    <div className={styles.inner}>
+                        <img
+                            className={styles.search_icon}
+                            src={search}
+                            alt=''
+                        />
+                        <Input />
 
-                    <div className={styles.additional_icons}>
-                        <img src={mic} alt='mic' />
-                        <img src={photo} alt='photo' />
+                        <div className={styles.additional_icons}>
+                            <img src={mic} alt='mic' />
+                            <img src={photo} alt='photo' />
+                        </div>
                     </div>
-                </div>
-                <SugestionsList />
-            </form>
-        </div>
+
+                    <SugestionsList />
+                </form>
+            </div>
+        </SearchBarProvider>
     );
 };
 

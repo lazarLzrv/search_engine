@@ -11,6 +11,7 @@
     transition: 0.5s;
     position: absolute;
     width: 100%;
+    overflow: hidden;
 
     &:hover {
         box-shadow: 0 1px 6px rgba(32, 33, 36, 0.28);

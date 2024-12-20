@@ -1,0 +1,250 @@
+[
+    {
+        "id": 1,
+        "subTitle": "React",
+        "parth": "https://github.com/facebook/react",
+        "title": "facebook/react: The library for web and native user interfaces.",
+        "text": "React is an open-source JavaScript library maintained by Facebook for building user interfaces, particularly single-page applications. It allows developers to create reusable UI components, making code more modular and easier to maintain. React’s virtual DOM enhances performance by efficiently updating only the parts of the actual DOM that change. It supports server-side rendering, making applications more SEO-friendly. Developers can use React with React Native to build mobile apps for iOS and Android. Its vast ecosystem includes tools like Redux for state management and libraries like React Router for navigation.",
+        "keywords": ["react", "react native"]
+    },
+    {
+        "id": 2,
+        "subTitle": "React Native",
+        "parth": "https://reactnative.dev/docs/getting-started",
+        "title": "React Native · A framework for building native apps using React",
+        "text": "React Native is a JavaScript framework created by Facebook for building mobile apps. It allows developers to use React and JavaScript to create native mobile applications for iOS and Android. Unlike web-based frameworks, React Native compiles to native code, offering better performance and a more seamless user experience. Developers can write a single codebase and deploy it across platforms, saving time and effort. With a large community and ecosystem of libraries, React Native simplifies mobile development. Core components include Views, Text, and Images, allowing rapid app development.",
+        "keywords": ["react native"]
+    },
+    {
+        "id": 3,
+        "subTitle": "React Redux",
+        "parth": "https://react-redux.js.org/",
+        "title": "React Redux · Official React bindings for Redux",
+        "text": "React Redux is the official library for integrating Redux with React applications. It provides a streamlined way to manage global state in React apps. Redux helps ensure predictable state updates, making debugging and testing easier. React Redux offers hooks like `useSelector` and `useDispatch` to access and manipulate the Redux store. It promotes best practices for state management and integrates seamlessly with Redux DevTools. With React Redux, developers can manage complex state logic, handle asynchronous actions, and keep components clean by avoiding excessive prop drilling.",
+        "keywords": ["react redux"]
+    },
+    {
+        "id": 4,
+        "subTitle": "React Native Components",
+        "parth": "https://reactnative.dev/docs/components-and-apis",
+        "title": "React Native Components and APIs",
+        "text": "React Native provides a collection of core components and APIs to build mobile applications. Components like `View`, `Text`, `Image`, and `ScrollView` are fundamental building blocks. Each component maps to native platform-specific elements, offering high performance. For example, a `View` maps to `UIView` on iOS and `android.view.View` on Android. React Native also includes APIs for accessing device features like the camera, geolocation, and notifications. Developers can create custom components and reuse them across their apps. This flexibility simplifies mobile development and maintains code consistency.",
+        "keywords": ["react native components"]
+    },
+    {
+        "id": 5,
+        "subTitle": "React Redux Toolkit",
+        "parth": "https://redux-toolkit.js.org/",
+        "title": "Redux Toolkit · The official, recommended way to write Redux logic",
+        "text": "Redux Toolkit is the official recommended way to write Redux code. It simplifies complex state management by providing best practices and utilities like `createSlice`, `configureStore`, and `createAsyncThunk`. These tools reduce boilerplate code and streamline the process of creating reducers and actions. Redux Toolkit supports immutable updates and integrates seamlessly with React. The inclusion of RTK Query simplifies data fetching and caching, making asynchronous logic easier to manage. It enhances developer experience and makes maintaining large Redux-based applications more efficient and less error-prone.",
+        "keywords": ["react redux toolkit"]
+    },
+    {
+        "id": 6,
+        "subTitle": "React Native Versions",
+        "parth": "https://reactnative.dev/releases",
+        "title": "React Native Versions and Releases",
+        "text": "React Native regularly releases new versions to improve performance, add features, and fix bugs. The versioning follows a predictable release cycle, helping developers plan upgrades. Each new version includes detailed changelogs, breaking changes, and migration guides. React Native versions may include updates to the JavaScript engine, improved debugging tools, and new APIs. Staying up-to-date ensures compatibility with the latest platform updates on iOS and Android. The React Native community and core team actively support developers, providing tools and documentation for smooth transitions between versions.",
+        "keywords": ["react native versions"]
+    },
+    {
+        "id": 7,
+        "subTitle": "React Redux NPM",
+        "parth": "https://www.npmjs.com/package/react-redux",
+        "title": "react-redux on npm",
+        "text": "React Redux is available as an npm package for easy installation in your React project. Installing React Redux allows you to connect your React components to a Redux store. The package provides hooks like `useSelector` and `useDispatch` for state management. To install, run `npm install react-redux` in your project directory. The package also supports TypeScript, offering type definitions out of the box. React Redux simplifies managing complex state, making your components cleaner and your app's state flow more predictable. The npm registry provides documentation and version history.",
+        "keywords": ["react redux npm"]
+    },
+    {
+        "id": 8,
+        "subTitle": "React Redux Tutorial",
+        "parth": "https://react-redux.js.org/tutorials/quick-start",
+        "title": "React Redux Quick Start Tutorial",
+        "text": "This tutorial provides a step-by-step guide to getting started with React Redux. Learn how to set up Redux in a React app, create a store, write reducers, and dispatch actions. The tutorial covers fundamental concepts like connecting React components to the Redux store using the `Provider` component and hooks such as `useSelector` and `useDispatch`. You'll also learn best practices for structuring your Redux code and handling asynchronous actions. By the end, you'll be able to manage state in a scalable and maintainable way.",
+        "keywords": ["react redux tutorial"]
+    },
+    {
+        "id": 9,
+        "subTitle": "React",
+        "parth": "https://reactjs.org/tutorial/tutorial.html",
+        "title": "React Official Tutorial: Intro to React",
+        "text": "This official tutorial introduces React fundamentals by building a simple interactive app. You’ll learn about React components, state, and props. The tutorial walks you through creating a tic-tac-toe game, highlighting concepts like component hierarchy, event handling, and conditional rendering. You'll also learn how to use React Developer Tools for debugging and inspecting your app. By following the tutorial, you'll gain a solid foundation in React development, enabling you to build dynamic and responsive user interfaces efficiently. The tutorial is beginner-friendly and comprehensive.",
+        "keywords": ["react"]
+    },
+    {
+        "id": 10,
+        "subTitle": "React Redux Alternative",
+        "parth": "https://zustand-demo.pmnd.rs/",
+        "title": "Zustand · A lightweight alternative to React Redux",
+        "text": "Zustand is a minimalist state management solution for React applications. It provides a simpler alternative to Redux for managing global state. Zustand uses hooks to manage state without boilerplate, making it more intuitive. The library has a small footprint and is highly performant. Zustand supports both synchronous and asynchronous state updates. It's ideal for smaller projects or situations where Redux may be overkill. Zustand also works well with React's concurrent mode. Its API is straightforward, allowing developers to quickly implement state management with minimal configuration.",
+        "keywords": ["react redux alternative"]
+    },
+    {
+        "id": 11,
+        "subTitle": "React",
+        "parth": "https://reactjs.org/docs/hooks-intro.html",
+        "title": "React Hooks: The New Way to Manage State",
+        "text": "React Hooks are a new addition to React 16.8 that allow you to use state and other React features without writing a class. The `useState` hook lets you manage local component state, while `useEffect` handles side effects like data fetching and DOM manipulation. Hooks enable cleaner, more modular code and allow developers to reuse stateful logic across multiple components. They're an essential feature for building modern React applications, making code more readable and easier to maintain without the need for class-based components.",
+        "keywords": ["react", "react redux", "react redux toolkit"]
+    },
+    {
+        "id": 12,
+        "subTitle": "React Native",
+        "parth": "https://reactnative.dev/docs/view",
+        "title": "React Native View Component",
+        "text": "In React Native, the `View` component is a fundamental building block for creating layouts and UI structures. It functions similarly to a `div` in HTML but works with native components for mobile platforms. You can nest `View` components to build complex layouts, apply styles, and control their behavior. The `View` component is highly customizable, supporting props like `flex`, `padding`, and `margin` to adjust the layout dynamically. It’s used in combination with other components to create responsive mobile apps with a native feel.",
+        "keywords": ["react native", "react native components", "react redux"]
+    },
+    {
+        "id": 13,
+        "subTitle": "React Redux Toolkit",
+        "parth": "https://redux-toolkit.js.org/tutorials/advanced-tutorial",
+        "title": "Advanced Redux Toolkit Tutorial",
+        "text": "The Redux Toolkit simplifies the process of working with Redux, especially for large-scale applications. This advanced tutorial dives into concepts like handling complex async operations with `createAsyncThunk` and managing data normalization with `createEntityAdapter`. Redux Toolkit also introduces features like Redux DevTools integration and simplifies reducer logic with `createSlice`. Developers can use the toolkit to scale their apps efficiently, making state management and data handling easier. Following best practices ensures cleaner code, better performance, and an overall more maintainable application.",
+        "keywords": [
+            "react redux",
+            "react redux toolkit",
+            "react redux tutorial"
+        ]
+    },
+    {
+        "id": 14,
+        "subTitle": "React Redux Tutorial",
+        "parth": "https://react-redux.js.org/tutorials/advanced-tutorial",
+        "title": "Advanced React Redux Tutorial",
+        "text": "This advanced React Redux tutorial covers topics like using middleware for async actions and optimizing performance with memoization. Learn to handle complex state management scenarios in large applications, including data normalization and managing deeply nested state. You’ll dive into `createSlice` for reducing boilerplate, and use tools like `redux-thunk` or `redux-saga` for asynchronous actions. This tutorial also provides strategies for debugging and testing Redux-based apps to ensure they scale well as the app grows. Perfect for developers already familiar with React Redux basics who want to level up.",
+        "keywords": [
+            "react redux tutorial",
+            "react redux",
+            "react redux toolkit"
+        ]
+    },
+    {
+        "id": 15,
+        "subTitle": "React Native Versions",
+        "parth": "https://reactnative.dev/releases",
+        "title": "React Native Version History and Releases",
+        "text": "React Native is continuously updated with new features, bug fixes, and improvements. Tracking version history helps developers stay updated with the latest features and bug fixes. React Native follows a predictable release cycle with major, minor, and patch versions. Understanding versioning ensures compatibility between the app and new versions of iOS and Android. Developers should review the changelog for breaking changes and migration guides for a smoother upgrade process. React Native’s open-source community also contributes by maintaining and improving older versions, ensuring stability for long-term projects.",
+        "keywords": ["react native versions", "react native", "react redux"]
+    },
+    {
+        "id": 16,
+        "subTitle": "React Native Components",
+        "parth": "https://reactnative.dev/docs/flatlist",
+        "title": "React Native FlatList Component",
+        "text": "The `FlatList` component is a powerful tool for rendering large lists of data in React Native apps. Unlike traditional `ScrollView`, `FlatList` is optimized for handling large datasets by rendering only the visible items. It provides features like item separators, pull-to-refresh, and custom item rendering. `FlatList` supports both vertical and horizontal scrolling, making it versatile for displaying various types of data. By using this component, developers can efficiently manage memory usage and create smooth, high-performance lists that scale with the size of the data.",
+        "keywords": ["react native components", "react native", "react redux"]
+    },
+    {
+        "id": 17,
+        "subTitle": "React Redux NPM Install",
+        "parth": "https://react-redux.js.org/introduction/installation",
+        "title": "How to Install React Redux Using NPM",
+        "text": "To start using React Redux in your React app, first install the package from npm by running `npm install react-redux` in your terminal. This installs the necessary bindings that connect your React components with Redux. After installation, you can create a Redux store and use the `Provider` component to pass the store to your entire app. Redux helps manage global state in a predictable way, which can be crucial for large applications. The official documentation provides a step-by-step guide to get started, making integration easy for beginners.",
+        "keywords": [
+            "react redux npm install",
+            "react redux",
+            "react redux toolkit"
+        ]
+    },
+    {
+        "id": 18,
+        "subTitle": "React Redux",
+        "parth": "https://react-redux.js.org/introduction/getting-started",
+        "title": "Getting Started with React Redux",
+        "text": "React Redux is a library that helps you integrate Redux with React apps. It allows you to manage global state in a predictable manner, making your app's data flow easy to understand. To get started, first install Redux and React Redux via npm. Next, create your store and connect it to your React components using the `Provider` component. From there, you can dispatch actions and read state using the `useDispatch` and `useSelector` hooks. With React Redux, state management becomes more efficient, especially for complex applications with large data needs.",
+        "keywords": ["react redux", "react redux tutorial", "react redux npm"]
+    },
+    {
+        "id": 19,
+        "subTitle": "React Redux Alternative",
+        "parth": "https://github.com/pmndrs/zustand",
+        "title": "Zustand: A Simple Alternative to React Redux",
+        "text": "Zustand is a minimalistic state management library for React, providing an alternative to Redux. Unlike Redux, Zustand does not require actions, reducers, or middleware. Instead, it offers a simple API for managing state with hooks. Zustand's small footprint makes it ideal for smaller projects or simpler use cases. It’s also highly performant, with automatic shallow comparisons and subscriptions that ensure minimal re-renders. Zustand is perfect for developers who need an easy-to-use and flexible state management solution, without the boilerplate and complexity of Redux.",
+        "keywords": ["react redux alternative", "react", "react redux toolkit"]
+    },
+    {
+        "id": 21,
+        "subTitle": "React Redux",
+        "parth": "https://react-redux.js.org/introduction/installation",
+        "title": "React Redux: Connecting Redux with React",
+        "text": "React Redux is a library that provides bindings to integrate Redux with React applications. It simplifies managing state in large applications by connecting components to the Redux store. By using `Provider` to pass the store to components and the `useSelector` and `useDispatch` hooks, developers can interact with the global state easily. Redux’s predictable state container helps in managing complex state transitions. With React Redux, developers can maintain a clear and consistent flow of data, making debugging and testing much easier for large-scale React applications.",
+        "keywords": ["react redux", "react", "react redux tutorial"]
+    },
+    {
+        "id": 22,
+        "subTitle": "React Native Components",
+        "parth": "https://reactnative.dev/docs/button",
+        "title": "React Native Button Component",
+        "text": "The Button component in React Native is used to create basic interactive buttons in your app. It comes with a simple API that allows developers to specify text, colors, and event handlers for user interactions. The component automatically adjusts to both Android and iOS, providing a native look and feel. You can customize Button with styles like `color`, `disabled`, and `onPress` for handling actions. While it's great for simple use cases, more complex buttons may require using Touchable components for additional customizations.",
+        "keywords": ["react native components", "react", "react native"]
+    },
+    {
+        "id": 23,
+        "subTitle": "React Native Versions",
+        "parth": "https://reactnative.dev/releases",
+        "title": "React Native: How to Upgrade Versions",
+        "text": "React Native frequently releases new versions with bug fixes, new features, and performance improvements. Upgrading to the latest version of React Native ensures compatibility with the latest iOS and Android versions and helps improve app performance. Developers should be aware of breaking changes in major updates and review the React Native changelog for instructions on migrating. Tools like `react-native upgrade` can simplify the process, while `react-native run-android` or `react-native run-ios` help test the app on the updated version. Regular upgrades keep your app secure and optimized.",
+        "keywords": ["react native versions", "react native", "react"]
+    },
+    {
+        "id": 24,
+        "subTitle": "React Redux Toolkit",
+        "parth": "https://redux-toolkit.js.org/introduction/quick-start",
+        "title": "React Redux Toolkit: Simplifying State Management",
+        "text": "React Redux Toolkit simplifies the process of managing state in Redux-based React apps. It offers utilities like `createSlice`, `createAsyncThunk`, and `configureStore` to reduce boilerplate code and streamline state management. `createSlice` automatically generates actions and reducers, while `createAsyncThunk` helps manage asynchronous logic. Redux Toolkit also includes built-in support for Redux DevTools and TypeScript, improving the developer experience. It’s the recommended approach for new Redux projects, offering a simpler, more maintainable way to handle state management in large applications.",
+        "keywords": ["react redux toolkit", "react redux", "react"]
+    },
+    {
+        "id": 25,
+        "subTitle": "React Redux Tutorial",
+        "parth": "https://react-redux.js.org/tutorials/quick-start",
+        "title": "Quick Start React Redux Tutorial",
+        "text": "The Quick Start tutorial from React Redux is designed to help developers get up and running with Redux quickly. It covers the basics of setting up the Redux store, creating actions and reducers, and connecting React components to the Redux store using the `useSelector` and `useDispatch` hooks. The tutorial also explains how to handle asynchronous actions and how to manage state in a predictable way across a React application. By the end of the tutorial, you’ll be able to implement state management in your React app using Redux and React Redux.",
+        "keywords": [
+            "react redux tutorial",
+            "react redux",
+            "react redux toolkit"
+        ]
+    },
+    {
+        "id": 26,
+        "subTitle": "React Redux NPM",
+        "parth": "https://www.npmjs.com/package/react-redux",
+        "title": "React Redux on NPM: Installing the Library",
+        "text": "To install React Redux, simply run `npm install react-redux` in your project directory. This will add the necessary bindings to connect your React components with Redux. React Redux simplifies state management by allowing components to access the Redux store without complex boilerplate. After installation, you can use the `Provider` component to pass the store to your React app, and the `useSelector` and `useDispatch` hooks to access and dispatch actions. The NPM registry also offers version control, making it easy to update or downgrade your React Redux version.",
+        "keywords": ["react redux npm", "react redux", "react"]
+    },
+    {
+        "id": 27,
+        "subTitle": "React Native Components",
+        "parth": "https://reactnative.dev/docs/switch",
+        "title": "React Native Switch Component",
+        "text": "The Switch component in React Native provides a simple way to toggle between two states, such as 'on' or 'off'. It’s commonly used for settings and preferences in mobile apps. The `Switch` component accepts props like `value`, `onValueChange`, and `disabled`, allowing developers to control the switch state and trigger actions based on user interactions. It also supports accessibility features like screen reader support and color customization. The Switch component has a native appearance on both iOS and Android, making it ideal for creating mobile-friendly toggles.",
+        "keywords": ["react native components", "react", "react native"]
+    },
+    {
+        "id": 28,
+        "subTitle": "React Native Versions",
+        "parth": "https://reactnative.dev/docs/upgrading",
+        "title": "Upgrading React Native Versions",
+        "text": "Upgrading React Native is important for keeping apps compatible with new iOS and Android features and maintaining security. The React Native team provides detailed migration guides for major updates, which include breaking changes and new feature introductions. Tools like `react-native upgrade` streamline the upgrade process, though developers should test their apps thoroughly after upgrading. For large projects, it’s recommended to upgrade incrementally by following React Native’s versioning guidelines. Regularly upgrading ensures that your app takes advantage of the latest improvements and is compatible with future platform updates.",
+        "keywords": ["react native versions", "react native", "react"]
+    },
+    {
+        "id": 29,
+        "subTitle": "React Redux Alternative",
+        "parth": "https://recoiljs.org/",
+        "title": "Recoil: An Alternative to Redux for State Management",
+        "text": "Recoil is a state management library for React that provides a simpler, more flexible approach than Redux. It allows developers to manage both local and global state using atoms (state units) and selectors (derived state). Recoil supports asynchronous queries and state management in a more declarative style. Unlike Redux, which requires explicit actions and reducers, Recoil’s API is designed to be intuitive and minimalistic. It works well with React’s Concurrent Mode and is highly performant, making it a strong alternative for smaller or more complex applications that need flexible state handling.",
+        "keywords": ["react redux alternative", "react", "react redux toolkit"]
+    },
+    {
+        "id": 30,
+        "subTitle": "React Native",
+        "parth": "https://reactnative.dev/docs/navigation",
+        "title": "React Native Navigation: A Guide",
+        "text": "React Native Navigation helps you navigate between screens in a React Native app. It provides a simple and flexible API to manage transitions, passing data between screens, and handling navigation events. React Native offers multiple options for navigation, including the built-in `react-navigation` library, which supports stack navigation, tab navigation, and drawer navigation. For more complex apps, developers can opt for libraries like `react-navigation-stack` or `react-native-navigation`. With navigation tools, you can create seamless user experiences, whether for simple or multi-screen applications.",
+        "keywords": ["react native", "react", "react native components"]
+    }
+]
