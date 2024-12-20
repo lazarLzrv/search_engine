@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef, useContext } from "react";
+import React, { useEffect, useRef, useContext } from "react";
 import { SearchBarContext } from "../../contexts/SearchBarContext";
 
 import useJson from "../../api/useJson";
@@ -22,7 +22,7 @@ const Index = () => {
     const onChange = (e) => {
         const { value } = e.target;
         if (value) {
-            getResultsAutoComplete(value).then((res) => {
+            getResultsAutoComplete(value, 10).then((res) => {
                 updateState({ sugestionsList: res, isOpen: true });
             });
         }

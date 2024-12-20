@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import { SearchBarContext } from "../../contexts/SearchBarContext";
 
 import { Link } from "react-router-dom";
@@ -13,6 +13,39 @@ const Index = () => {
     const { sugestionsList, isOpen } = state;
 
     const [idInHistory, setIdInHistory] = useState(1);
+    const [selectedRow, setSelectedRow] = useState(0);
+
+    const onKeyDown = (e) => {
+        if (sugestionsList && sugestionsList.length > 0 && isOpen) {
+            const setMaxValue = (prev) => Math.max(prev - 1, 0);
+            const setMinValue = (prev) =>
+                Math.min(prev + 1, sugestionsList.length - 1);
+
+            if (e.key === "ArrowUp") {
+                setSelectedRow((prev) => setMaxValue(prev));
+            } else if (e.key === "ArrowDown") {
+                setSelectedRow((prev) => setMinValue(prev));
+            }
+        }
+    };
+
+    useEffect(() => {
+        if (!isOpen) {
+            setSelectedRow(0);
+        }
+
+        window.addEventListener("keydown", onKeyDown);
+
+        return () => {
+            window.removeEventListener("keydown", onKeyDown);
+        };
+    }, [sugestionsList, isOpen]);
+
+    useEffect(() => {
+        if (selectedRow) {
+            updateState({ inputValue: sugestionsList[selectedRow].title });
+        }
+    }, [selectedRow]);
 
     return (
         sugestionsList &&
@@ -23,48 +56,46 @@ const Index = () => {
                         sugestionsList.map(({ title, id }, i) => {
                             const inHistory = idInHistory === id;
                             return (
-                                i < 10 && (
-                                    <li
-                                        key={id}
-                                        className={
-                                            inHistory ? styles.in_history : ""
-                                        }
+                                <li
+                                    key={id}
+                                    className={`${
+                                        inHistory ? styles.in_history : ""
+                                    } ${
+                                        selectedRow === i ? styles.focused : ""
+                                    }`}
+                                >
+                                    <Link
+                                        to={`/search?q=${title.replace(
+                                            / /g,
+                                            "+"
+                                        )}`}
+                                        onClick={() => {
+                                            updateState({ isOpen: false });
+                                        }}
                                     >
-                                        <Link
-                                            to={`/search?q=${title.replace(
-                                                / /g,
-                                                "+"
-                                            )}`}
+                                        {inHistory ? (
+                                            <img src={clock} alt='' />
+                                        ) : (
+                                            <img
+                                                className={styles.search_icon}
+                                                src={search}
+                                                alt=''
+                                            />
+                                        )}
+                                        {title}
+                                    </Link>
+                                    {inHistory ? (
+                                        <span
                                             onClick={() => {
-                                                updateState({ isOpen: false });
+                                                setIdInHistory(null);
                                             }}
                                         >
-                                            {inHistory ? (
-                                                <img src={clock} alt='' />
-                                            ) : (
-                                                <img
-                                                    className={
-                                                        styles.search_icon
-                                                    }
-                                                    src={search}
-                                                    alt=''
-                                                />
-                                            )}
-                                            {title}
-                                        </Link>
-                                        {inHistory ? (
-                                            <span
-                                                onClick={() => {
-                                                    setIdInHistory(null);
-                                                }}
-                                            >
-                                                delete
-                                            </span>
-                                        ) : (
-                                            ""
-                                        )}
-                                    </li>
-                                )
+                                            delete
+                                        </span>
+                                    ) : (
+                                        ""
+                                    )}
+                                </li>
                             );
                         })
                     ) : (

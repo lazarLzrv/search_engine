@@ -1,11 +1,15 @@
 const useJson = () => {
-    const getResultsAutoComplete = async (queryText) => {
+    const getResultsAutoComplete = async (queryText, limit) => {
         const data = await fetch("getResultsAutoComplete.json").then((res) =>
             res.json()
         );
+        console.log(limit);
 
-        return data.filter(({ title }) => {
-            return title.toLowerCase().includes(queryText.toLowerCase());
+        return data.filter(({ title }, i) => {
+            return (
+                i < limit &&
+                title.toLowerCase().includes(queryText.toLowerCase())
+            );
         });
     };
 
