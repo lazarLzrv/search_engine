@@ -12,7 +12,7 @@ function App() {
         <BrowserRouter>
             <SearchBarProvider>
                 <Routes>
-                    <Route path='/' element={<HomePage />} />
+                    <Route index element={<HomePage />} />
                     <Route path='/search' element={<ResultsPage />} />
                 </Routes>
             </SearchBarProvider>

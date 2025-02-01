@@ -1,6 +1,6 @@
-import React, { useEffect, useState, useContext } from "react";
+import React, { useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
-import { SearchBarContext } from "../contexts/SearchBarContext";
+import { useSearchBarContext } from "../contexts/SearchBarContext";
 
 import useJson from "../api/useJson";
 
@@ -11,11 +11,11 @@ import Col from "../components/Grid/Col";
 import SearchBar from "../components/SearchBar";
 import SingleResult from "../components/SingleResult";
 
-const Index = () => {
+const ResultsPage = () => {
     const [searchParams] = useSearchParams();
     const query = searchParams.get("q");
 
-    const { state, updateState } = useContext(SearchBarContext);
+    const { state, dispatch } = useSearchBarContext();
     const { results } = state;
 
     const { getResultsList } = useJson();
@@ -23,10 +23,9 @@ const Index = () => {
     useEffect(() => {
         if (query) {
             getResultsList(query).then((res) => {
-                updateState({ results: res });
+                dispatch({ type: "SET_RESULTS", payload: res });
             });
-
-            updateState({ inputValue: query });
+            dispatch({ type: "SET_INPUT_VALUE", payload: query });
         }
     }, [query]);
 
@@ -61,4 +60,4 @@ const Index = () => {
     );
 };
 
-export default Index;
+export default ResultsPage;

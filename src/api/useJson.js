@@ -3,7 +3,6 @@ const useJson = () => {
         const data = await fetch("getResultsAutoComplete.json").then((res) =>
             res.json()
         );
-        console.log(limit);
 
         return data.filter(({ title }, i) => {
             return (

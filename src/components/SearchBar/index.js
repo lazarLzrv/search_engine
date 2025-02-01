@@ -1,6 +1,6 @@
-import React, { useEffect, useRef, useContext } from "react";
+import React, { useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
-import { SearchBarContext } from "../../contexts/SearchBarContext";
+import { useSearchBarContext } from "../../contexts/SearchBarContext";
 
 import useJson from "../../api/useJson";
 
@@ -13,14 +13,20 @@ import photo from "../../assets/icons/photo.svg";
 
 import styles from "./styles.module.scss";
 
-const Index = () => {
+const SearchBar = () => {
     const ref = useRef(null);
     const navigate = useNavigate();
 
     const { getResultsList } = useJson();
 
-    const { state, updateState } = useContext(SearchBarContext);
+    const { state, dispatch } = useSearchBarContext();
     const { inputValue } = state;
+
+    const handleClickOutside = (e) => {
+        if (ref.current && !ref.current.contains(e.target)) {
+            dispatch({ type: "SET_IS_OPEN", payload: false });
+        }
+    };
 
     useEffect(() => {
         document.addEventListener("mousedown", handleClickOutside);
@@ -30,17 +36,13 @@ const Index = () => {
         };
     }, []);
 
-    const handleClickOutside = (e) => {
-        if (ref.current && !ref.current.contains(e.target)) {
-            updateState({ isOpen: false });
-        }
-    };
-
     const onSubmit = (e) => {
         e.preventDefault();
 
         getResultsList(inputValue).then((res) => {
-            updateState({ results: res, isOpen: false });
+            dispatch({ type: "SET_IS_OPEN", payload: false });
+            dispatch({ type: "SET_RESULTS", payload: res });
+
             navigate(`/search?q=${inputValue.replace(/ /g, "+")}`);
         });
     };
@@ -64,4 +66,4 @@ const Index = () => {
     );
 };
 
-export default Index;
+export default SearchBar;

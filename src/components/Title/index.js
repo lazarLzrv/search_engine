@@ -2,7 +2,7 @@ import React from "react";
 
 import styles from "./styles.module.scss";
 
-const Index = ({ text }) => {
+const Title = ({ text }) => {
     return (
         <>
             <h3 className={styles.title}>{text}</h3>
@@ -17,4 +17,4 @@ const Index = ({ text }) => {
     );
 };
 
-export default Index;
+export default Title;

@@ -2,8 +2,8 @@ import React from "react";
 
 import styles from "./styles.module.scss";
 
-const Index = ({ children, size }) => {
+const Col = ({ children, size }) => {
     return <div className={`${styles.row} ${size}`}>{children}</div>;
 };
 
-export default Index;
+export default Col;

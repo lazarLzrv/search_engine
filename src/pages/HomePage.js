@@ -2,7 +2,7 @@ import Container from "../components/Grid/Container";
 import Title from "../components/Title";
 import SearchBar from "../components/SearchBar";
 
-const Index = () => {
+const HomePage = () => {
     return (
         <>
             <Container size='sm'>
@@ -13,4 +13,4 @@ const Index = () => {
     );
 };
 
-export default Index;
+export default HomePage;

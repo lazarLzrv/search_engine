@@ -1,16 +1,16 @@
-import React, { useEffect, useRef, useContext } from "react";
-import { SearchBarContext } from "../../contexts/SearchBarContext";
+import React, { useEffect, useRef } from "react";
+import { useSearchBarContext } from "../../contexts/SearchBarContext";
 
 import useJson from "../../api/useJson";
 
 import styles from "./styles.module.scss";
 
-const Index = () => {
+const Input = () => {
     const ref = useRef(null);
 
     const { getResultsAutoComplete } = useJson();
 
-    const { updateState, state } = useContext(SearchBarContext);
+    const { state, dispatch } = useSearchBarContext();
     const { inputValue } = state;
 
     useEffect(() => {
@@ -23,24 +23,25 @@ const Index = () => {
         const { value } = e.target;
         if (value) {
             getResultsAutoComplete(value, 10).then((res) => {
-                updateState({ sugestionsList: res, isOpen: true });
+                dispatch({ type: "SET_IS_OPEN", payload: true });
+                dispatch({ type: "SET_SUGESTION_LIST", payload: res });
             });
         }
-        updateState({ inputValue: value });
+        dispatch({ type: "SET_INPUT_VALUE", payload: value });
     };
 
     return (
         <input
+            ref={ref}
             value={inputValue}
             type='text'
-            ref={ref}
             className={styles.input}
-            onChange={(e) => onChange(e)}
+            onChange={onChange}
             onClick={() => {
-                updateState({ isOpen: true });
+                dispatch({ type: "SET_IS_OPEN", payload: true });
             }}
         />
     );
 };
 
-export default Index;
+export default Input;

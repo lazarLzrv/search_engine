@@ -79,6 +79,7 @@
     .text_center {
         justify-content: center;
         font-weight: bold;
+
         &:hover {
             background: var(--white);
             cursor: default;

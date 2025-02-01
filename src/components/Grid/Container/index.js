@@ -2,7 +2,7 @@ import React from "react";
 
 import styles from "./styles.module.scss";
 
-const Index = ({ size = "sm", children }) => {
+const Container = ({ size = "sm", children }) => {
     return (
         <section className={`${styles.container} ${styles[size]}`}>
             {children}
@@ -10,4 +10,4 @@ const Index = ({ size = "sm", children }) => {
     );
 };
 
-export default Index;
+export default Container;

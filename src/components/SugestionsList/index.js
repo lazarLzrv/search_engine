@@ -1,5 +1,5 @@
-import React, { useState, useContext, useEffect } from "react";
-import { SearchBarContext } from "../../contexts/SearchBarContext";
+import React, { useState, useEffect } from "react";
+import { useSearchBarContext } from "../../contexts/SearchBarContext";
 
 import { Link } from "react-router-dom";
 
@@ -8,8 +8,8 @@ import search from "../../assets/icons/search.svg";
 
 import styles from "./styles.module.scss";
 
-const Index = () => {
-    const { state, updateState } = useContext(SearchBarContext);
+const SugestionsList = () => {
+    const { state, dispatch } = useSearchBarContext();
     const { sugestionsList, isOpen } = state;
 
     const [idInHistory, setIdInHistory] = useState(1);
@@ -43,9 +43,12 @@ const Index = () => {
 
     useEffect(() => {
         if (selectedRow === -1) {
-            updateState({ inputValue: "" });
+            dispatch({ type: "SET_INPUT_VALUE", payload: "" });
         } else if (sugestionsList && sugestionsList.length > 0) {
-            updateState({ inputValue: sugestionsList[selectedRow].title });
+            dispatch({
+                type: "SET_INPUT_VALUE",
+                payload: sugestionsList[selectedRow].title,
+            });
         }
     }, [selectedRow]);
 
@@ -72,7 +75,10 @@ const Index = () => {
                                             "+"
                                         )}`}
                                         onClick={() => {
-                                            updateState({ isOpen: false });
+                                            dispatch({
+                                                type: "SET_IS_OPEN",
+                                                isOpen: false,
+                                            });
                                         }}
                                     >
                                         {inHistory ? (
@@ -111,4 +117,4 @@ const Index = () => {
     );
 };
 
-export default Index;
+export default SugestionsList;

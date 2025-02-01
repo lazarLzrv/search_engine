@@ -2,7 +2,7 @@ import React from "react";
 
 import styles from "./styles.module.scss";
 
-const Index = ({ data }) => {
+const SingleResult = ({ data }) => {
     const { subTitle, parth, title, text, keywords } = data;
 
     return (
@@ -28,4 +28,4 @@ const Index = ({ data }) => {
     );
 };
 
-export default Index;
+export default SingleResult;
