@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import { useEffect, useRef, ChangeEvent } from "react";
 import { useSearchBarContext } from "../../contexts/SearchBarContext";
 
 import useJson from "../../api/useJson";
@@ -6,7 +6,7 @@ import useJson from "../../api/useJson";
 import styles from "./styles.module.scss";
 
 const Input = () => {
-    const ref = useRef(null);
+    const ref = useRef<HTMLInputElement>(null);
 
     const { getResultsAutoComplete } = useJson();
 
@@ -19,7 +19,7 @@ const Input = () => {
         }
     }, []);
 
-    const onChange = (e) => {
+    const onChange = (e: ChangeEvent<HTMLInputElement>) => {
         const { value } = e.target;
         if (value) {
             getResultsAutoComplete(value, 10).then((res) => {

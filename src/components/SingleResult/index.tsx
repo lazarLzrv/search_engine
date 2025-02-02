@@ -1,8 +1,15 @@
-import React from "react";
-
 import styles from "./styles.module.scss";
 
-const SingleResult = ({ data }) => {
+export type ResultsProps = {
+    id: number;
+    subTitle: string;
+    parth: string;
+    title: string;
+    text: string;
+    keywords: string[];
+};
+
+const SingleResult = ({ data }: { data: ResultsProps }) => {
     const { subTitle, parth, title, text, keywords } = data;
 
     return (
@@ -20,7 +27,7 @@ const SingleResult = ({ data }) => {
 
             <p className={styles.text}>{text}</p>
             <ul className={styles.keywords}>
-                {keywords.map((item) => {
+                {keywords.map((item: string) => {
                     return <li key={item}>[{item}]</li>;
                 })}
             </ul>

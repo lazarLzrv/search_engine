@@ -1,8 +1,8 @@
-import React from "react";
-
 import styles from "./styles.module.scss";
 
-const Title = ({ text }) => {
+type TitleProps = { text: string };
+
+const Title = ({ text }: TitleProps) => {
     return (
         <>
             <h3 className={styles.title}>{text}</h3>

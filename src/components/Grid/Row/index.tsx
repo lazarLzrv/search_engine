@@ -1,8 +1,12 @@
-import React from "react";
+import { ReactNode } from "react";
 
 import styles from "./styles.module.scss";
 
-const Row = ({ children }) => {
+type RowProps = {
+    children: ReactNode;
+};
+
+const Row = ({ children }: RowProps) => {
     return <div className={styles.row}>{children}</div>;
 };
 

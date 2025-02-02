@@ -1,8 +1,8 @@
-import React, { useEffect, useRef } from "react";
+import { useEffect, useRef, FormEvent } from "react";
 import { useNavigate } from "react-router-dom";
 import { useSearchBarContext } from "../../contexts/SearchBarContext";
 
-// import useJson from "../../api/useJson";
+import useJson from "../../api/useJson";
 
 import Input from "../Input";
 import SugestionsList from "../SugestionsList";
@@ -14,7 +14,7 @@ import photo from "../../assets/icons/photo.svg";
 import styles from "./styles.module.scss";
 
 const SearchBar = () => {
-    const ref = useRef(null);
+    const ref = useRef<HTMLDivElement>(null);
     const navigate = useNavigate();
 
     const { getResultsList } = useJson();
@@ -22,21 +22,23 @@ const SearchBar = () => {
     const { state, dispatch } = useSearchBarContext();
     const { inputValue } = state;
 
-    const handleClickOutside = (e) => {
-        if (ref.current && !ref.current.contains(e.target)) {
+    const handleClickOutside = (e: MouseEvent) => {
+        if (ref.current && !ref.current.contains(e.target as Node)) {
             dispatch({ type: "SET_IS_OPEN", payload: false });
         }
     };
 
     useEffect(() => {
-        document.addEventListener("mousedown", handleClickOutside);
+        const handleMouseDown = (e: MouseEvent) => handleClickOutside(e);
+
+        document.addEventListener("mousedown", handleMouseDown);
 
         return () => {
-            document.removeEventListener("mousedown", handleClickOutside);
+            document.removeEventListener("mousedown", handleMouseDown);
         };
     }, []);
 
-    const onSubmit = (e) => {
+    const onSubmit = (e: FormEvent) => {
         e.preventDefault();
 
         getResultsList(inputValue).then((res) => {

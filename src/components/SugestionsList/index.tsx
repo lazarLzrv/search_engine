@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useSearchBarContext } from "../../contexts/SearchBarContext";
 
 import { Link } from "react-router-dom";
@@ -12,13 +12,13 @@ const SugestionsList = () => {
     const { state, dispatch } = useSearchBarContext();
     const { sugestionsList, isOpen } = state;
 
-    const [idInHistory, setIdInHistory] = useState(1);
+    const [idInHistory, setIdInHistory] = useState<null | number>(1);
     const [selectedRow, setSelectedRow] = useState(0);
 
-    const onKeyDown = (e) => {
+    const onKeyDown = (e: KeyboardEvent) => {
         if (sugestionsList && sugestionsList.length > 0 && isOpen) {
-            const setMaxValue = (prev) => Math.max(prev - 1, -1);
-            const setMinValue = (prev) =>
+            const setMaxValue = (prev: number) => Math.max(prev - 1, -1);
+            const setMinValue = (prev: number) =>
                 Math.min(prev + 1, sugestionsList.length - 1);
 
             if (e.key === "ArrowUp") {
@@ -53,9 +53,8 @@ const SugestionsList = () => {
     }, [selectedRow]);
 
     return (
-        sugestionsList &&
-        isOpen && (
-            <div className={styles.sugestions_list}>
+        <div className={styles.sugestions_list}>
+            {sugestionsList && isOpen && (
                 <ul>
                     {sugestionsList.length > 0 ? (
                         sugestionsList.map(({ title, id }, i) => {
@@ -77,7 +76,7 @@ const SugestionsList = () => {
                                         onClick={() => {
                                             dispatch({
                                                 type: "SET_IS_OPEN",
-                                                isOpen: false,
+                                                payload: false,
                                             });
                                         }}
                                     >
@@ -112,8 +111,8 @@ const SugestionsList = () => {
                         </li>
                     )}
                 </ul>
-            </div>
-        )
+            )}
+        </div>
     );
 };
 

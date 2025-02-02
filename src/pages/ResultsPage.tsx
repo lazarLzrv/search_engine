@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
 import { useSearchBarContext } from "../contexts/SearchBarContext";
 
@@ -9,7 +9,7 @@ import Row from "../components/Grid/Row";
 import Col from "../components/Grid/Col";
 
 import SearchBar from "../components/SearchBar";
-import SingleResult from "../components/SingleResult";
+import SingleResult, { ResultsProps } from "../components/SingleResult";
 
 const ResultsPage = () => {
     const [searchParams] = useSearchParams();
@@ -36,7 +36,7 @@ const ResultsPage = () => {
                 <Row>
                     <Col size='md-8'>
                         {results.length > 0 ? (
-                            results.map((item, i) => {
+                            results.map((item: ResultsProps, i) => {
                                 return (
                                     i < 10 && (
                                         <SingleResult
