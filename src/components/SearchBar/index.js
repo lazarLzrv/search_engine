@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { useSearchBarContext } from "../../contexts/SearchBarContext";
 
-import useJson from "../../api/useJson";
+// import useJson from "../../api/useJson";
 
 import Input from "../Input";
 import SugestionsList from "../SugestionsList";
