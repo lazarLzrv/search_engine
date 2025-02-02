@@ -6,6 +6,7 @@ const HomePage = () => {
     return (
         <>
             <Container size='sm'>
+                asd
                 <Title text='search X' />
                 <SearchBar />
             </Container>
